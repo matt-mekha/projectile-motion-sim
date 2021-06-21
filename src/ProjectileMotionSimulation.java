@@ -107,6 +107,7 @@ public class ProjectileMotionSimulation {
     if (position.y <= goalY && lastPosition.y >= goalY) {
       double alpha = (goalY - lastPosition.y) / (position.y - lastPosition.y);
       range = (position.x - lastPosition.x) * alpha + lastPosition.x;
+      time = time - simulationStep * (1 - alpha);
     } else {
       time = Double.NaN;
     }
